@@ -22,11 +22,26 @@ export function Form() {
 
     const saveForm = async () => {
         //         dispatch(addForm(form))
+
+
+        const { email } = form
+        const isValid = confirmEmail(email)
+if(isValid){
+  
         const receivedForm = formService.getByEmail(form)
         if (!receivedForm) {
             dispatch(addForm(form))
             console.log('thank you')
         }
+    }
+    }
+    const confirmEmail = (input) => {
+        var format = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        if (input.match(format)) return true
+        else return false
+    }
+
 
         else console.log('form exists')
     }

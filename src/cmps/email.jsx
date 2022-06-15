@@ -3,16 +3,12 @@ import React, { useRef } from 'react'
 export const Email = ({ handleForm }) => {
     const emailRef = useRef()
 
-    const confirmEmail = (event) => {
-        console.log(event.target);
-    }
-
     return (
-        <label> LinkedIn
-            <input type='text'
+        <label> Email address
+            <input type='email'
                 name='email'
                 ref={emailRef}
-                onChange={confirmEmail}
+                onChange={handleForm}
                 required
                 placeholder='Your email address'
             />
