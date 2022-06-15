@@ -1,15 +1,7 @@
-// SETUP
-@import './setup/typography';
-@import './setup/variables';
-@import './setup/mixin';
-@import './setup/functions';
-
 //BASICS
 @import './basic/helpers';
 @import './basic/base';
-@import './basic/layout';
+
 
 // PAGES
-
-
-// CMPS
+@import '../style/pages/form'
