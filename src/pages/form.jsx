@@ -10,7 +10,7 @@ import { Linkedin } from '../cmps/linkedin'
 import { Experience } from '../cmps/experience'
 import { Budget } from '../cmps/budget'
 
-import { addForm } from '../store/form/form.action'
+import { addForm } from '../store/form/form.action.js'
 import { formService } from '../services/form/form.service'
 import { useDispatch } from 'react-redux'
 
@@ -22,8 +22,10 @@ export function Form() {
     const saveForm = async () => {
         const { email } = form
         const isValid = confirmEmail(email)
+        console.log(isValid)
         if (isValid) {
-            const receivedForm = formService.getByEmail(form)
+            const receivedForm = await formService.getByEmail(form.email)
+            console.log(receivedForm)
             if (!receivedForm) {
                 dispatch(addForm(form))
                 console.log('thank you')
