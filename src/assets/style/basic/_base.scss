@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(90%);
+    }
+}

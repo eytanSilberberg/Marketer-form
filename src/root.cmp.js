@@ -7,13 +7,13 @@ export class RootCmp extends React.Component {
 
     render() {
         return (
-            <div>
-                <main>
-                    <Routes>
-                        {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
-                    </Routes>
-                </main>
-            </div>
+
+            <main className='main-app'>
+                <Routes>
+                    {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
+                </Routes>
+            </main>
+
         )
     }
 }

@@ -39,7 +39,8 @@ export function Form() {
     }
 
 
-    return <div className="flex col">
+    return <div className="main-form flex col">
+        <h1>Become a marketer</h1>
         <form action="" className="flex col">
             <FirstName handleForm={handleForm} />
             <LastName handleForm={handleForm} />
@@ -47,12 +48,12 @@ export function Form() {
             <Website handleForm={handleForm} />
             <Linkedin handleForm={handleForm} />
             <Experience handleForm={handleForm} />
-            <Budget handleForm={handleForm} />
+            {/* <Budget handleForm={handleForm} /> */}
         </form>
 
         <div className="btn-container flex">
-            <button onClick={saveForm}>Submit</button>
-            <button>Reset</button>
+            <button className='btn-submit' onClick={saveForm}>Submit</button>
+            <button className='btn-reset'>Reset</button>
         </div>
 
 
