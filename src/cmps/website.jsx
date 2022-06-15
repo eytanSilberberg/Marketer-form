@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useRef } from 'react'
 
-export function Website({ ref, handleForm }) {
-
+export function Website({ handleForm }) {
+    const websiteRef = useRef()
 
     return (
-        <label htmlFor="">
-            <input type="text"
-                name='websiteRef'
-                ref={ref}
+        <label> Website
+            <input type='text'
+                name='website'
+                ref={websiteRef}
+                onChange={handleForm}
                 placeholder='Your website link'
-                onChange={handleForm} />
+            />
         </label>
     )
 
