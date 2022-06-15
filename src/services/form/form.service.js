@@ -7,7 +7,7 @@ import { storageService } from '../basic/async-storage.service'
 
 const STORAGE_KEY = 'form'
 
-export const anyService = {
+export const formService = {
     query,
     getById,
     remove,
