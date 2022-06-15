@@ -9,7 +9,7 @@ function getActionSetForms(any) {
 }
 
 function getActionAddForm(form) {
-
+    console.log('form from action ', form)
     return { type: 'ADD_FORM', form }
 }
 
@@ -32,9 +32,11 @@ export function loadForms() {
 }
 
 export function addForm(form) {
+    console.log(form)
     return async dispatch => {
         try {
             const addedForm = await formService.save(form)
+            console.log(addedForm)
             dispatch(getActionAddForm(addedForm))
             return addedForm
         }

@@ -7,7 +7,8 @@ export function formReducer(state = initialState, action = {}) {
         case 'SET_FORMS':
             return { ...state, forms: action.forms }
         case 'ADD_FORM':
-            return { ...state, forms: [action.forms, ...state.forms] }
+            console.log('in the reducer', action.form)
+            return { ...state, forms: [action.form, ...state.forms] }
         case 'REMOVE_FORM':
             return { ...state, forms: state.forms.filter(form => form._id !== action.formId) }
         case 'UPDATE_FORM':

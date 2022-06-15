@@ -23,7 +23,9 @@ async function query() {
 
 async function getByEmail(email) {
     console.log(email)
-    return storageService.get(STORAGE_KEY, email)
+    const doesExists = await storageService.get(STORAGE_KEY, email)
+    console.log(doesExists)
+    return doesExists
     // return await httpService.get(`any/${anyId}`)
 }
 
@@ -37,12 +39,13 @@ async function save(form) {
     if (form._id) {
         savedForm = await storageService.put(STORAGE_KEY, form)
         // carChannel.postMessage(getActionUpdateCar(savedForm))
-
+        return savedForm
     } else {
+        console.log('inside the save');
         savedForm = await storageService.post(STORAGE_KEY, form)
         // carChannel.postMessage(getActionAddCar(savedForm))
+        return savedForm
     }
-    return savedForm
     // if (any._id) return httpService.put(`any/${any._id}`, any)
     // else return httpService.post('any', any)
 }
