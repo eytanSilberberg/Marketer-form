@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/root.reducer';
-import App, { RootCmp } from './root.cmp';
+import { RootCmp } from './root.cmp';
 import './assets/style/style.scss';
 import { BrowserRouter } from 'react-router-dom'
 
