@@ -11,13 +11,20 @@ import { Linkedin } from '../cmps/linkedin'
 import { Experience } from '../cmps/experience'
 import { Budget } from '../cmps/budget'
 
+import { loadForms, addForm } from '../store/form/form.action'
+import { useDispatch } from 'react-redux'
 
 export function Form() {
     const [form, handleForm] = useForm({ firstName: '', lastName: '', email: '', website: '', linkedin: '', experience: '', budget: '' })
 
-    const printForm = () => {
-        console.log(form)
+
+    const saveForm = () => {
+//         dispatch(addForm(form))
+      console.log(form)
     }
+
+
+
 
     return <div className="flex col">
         <form action="" className="flex col">
@@ -31,9 +38,10 @@ export function Form() {
         </form>
 
         <div className="btn-container flex">
-            <button onClick={printForm}>Submit</button>
+            <button onClick={saveForm}>Submit</button>
             <button onClick={printForm}>Reset</button>
         </div>
+
 
     </div>
 }
