@@ -19,8 +19,8 @@ export function Form() {
 
 
     const saveForm = () => {
-//         dispatch(addForm(form))
-      console.log(form)
+        //         dispatch(addForm(form))
+        console.log(form)
     }
 
 
@@ -29,9 +29,9 @@ export function Form() {
     return <div className="flex col">
         <form action="" className="flex col">
             <FirstName handleForm={handleForm} />
-            <LastName  handleForm={handleForm} />
+            <LastName handleForm={handleForm} />
             <Email handleForm={handleForm} />
-            <Website  handleForm={handleForm} />
+            <Website handleForm={handleForm} />
             <Linkedin handleForm={handleForm} />
             <Experience handleForm={handleForm} />
             <Budget handleForm={handleForm} />
@@ -39,7 +39,7 @@ export function Form() {
 
         <div className="btn-container flex">
             <button onClick={saveForm}>Submit</button>
-            <button onClick={printForm}>Reset</button>
+            <button>Reset</button>
         </div>
 
 
