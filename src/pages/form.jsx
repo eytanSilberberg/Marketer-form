@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useRef } from 'react'
+import React from 'react'
 import { useForm } from '../hooks/useForm'
 
 //CMPS
@@ -11,7 +10,7 @@ import { Linkedin } from '../cmps/linkedin'
 import { Experience } from '../cmps/experience'
 import { Budget } from '../cmps/budget'
 
-import { loadForms, addForm } from '../store/form/form.action'
+import { addForm } from '../store/form/form.action'
 import { formService } from '../services/form/form.service'
 import { useDispatch } from 'react-redux'
 
@@ -21,20 +20,17 @@ export function Form() {
 
 
     const saveForm = async () => {
-        //         dispatch(addForm(form))
-
-
         const { email } = form
         const isValid = confirmEmail(email)
-if(isValid){
-  
-        const receivedForm = formService.getByEmail(form)
-        if (!receivedForm) {
-            dispatch(addForm(form))
-            console.log('thank you')
+        if (isValid) {
+            const receivedForm = formService.getByEmail(form)
+            if (!receivedForm) {
+                dispatch(addForm(form))
+                console.log('thank you')
+            }
         }
     }
-    }
+
     const confirmEmail = (input) => {
         var format = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -42,9 +38,6 @@ if(isValid){
         else return false
     }
 
-
-        else console.log('form exists')
-    }
 
     return <div className="flex col">
         <form action="" className="flex col">
