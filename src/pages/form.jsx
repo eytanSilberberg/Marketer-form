@@ -12,19 +12,24 @@ import { Experience } from '../cmps/experience'
 import { Budget } from '../cmps/budget'
 
 import { loadForms, addForm } from '../store/form/form.action'
+import { formService } from '../services/form/form.service'
 import { useDispatch } from 'react-redux'
 
 export function Form() {
+    const dispatch = useDispatch()
     const [form, handleForm] = useForm({ firstName: '', lastName: '', email: '', website: '', linkedin: '', experience: '', budget: '' })
 
 
-    const saveForm = () => {
+    const saveForm = async () => {
         //         dispatch(addForm(form))
-        console.log(form)
+        const receivedForm = formService.getByEmail(form)
+        if (!receivedForm) {
+            dispatch(addForm(form))
+            console.log('thank you')
+        }
+
+        else console.log('form exists')
     }
-
-
-
 
     return <div className="flex col">
         <form action="" className="flex col">

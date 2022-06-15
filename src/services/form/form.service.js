@@ -9,7 +9,7 @@ const STORAGE_KEY = 'form'
 
 export const formService = {
     query,
-    getById,
+    getByEmail,
     remove,
     save,
 
@@ -21,8 +21,9 @@ async function query() {
     // return httpService.get('any')
 }
 
-async function getById(formId) {
-    return storageService.get(STORAGE_KEY, formId)
+async function getByEmail(email) {
+    console.log(email)
+    return storageService.get(STORAGE_KEY, email)
     // return await httpService.get(`any/${anyId}`)
 }
 

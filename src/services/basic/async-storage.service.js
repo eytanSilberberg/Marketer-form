@@ -28,9 +28,9 @@ function _save(entityType, entities) {
 
 
 
-function get(entityType, entityId) {
+function get(entityType, entityEmail) {
     return query(entityType)
-        .then(entities => entities.find(entity => entity._id === entityId))
+        .then(entities => entities.find(entity => entity.email === entityEmail))
 }
 
 function put(entityType, updatedEntity) {
